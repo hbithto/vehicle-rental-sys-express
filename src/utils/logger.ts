@@ -1,0 +1,43 @@
+import config from '~/config';
+import winston from 'winston';
+
+const levels = {
+  error: 0,
+  warn: 1,
+  info: 2,
+  http: 3,
+  debug: 4
+};
+
+winston.addColors({
+  error: 'red',
+  warn: 'yellow',
+  info: 'green',
+  http: 'blue',
+  debug: 'white'
+});
+
+const logger = winston.createLogger({
+  level: config.env === 'development' ? 'debug' : 'warn',
+  levels,
+  format: winston.format.combine(
+    winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
+    winston.format.printf((info) => `[${info.timestamp}]: ${info.level.toUpperCase()}: ${info.message}`)
+  ),
+  transports: [
+    //   new winston.transports.File({
+    //     level: 'error',
+    //     filename: 'logs/error.log',
+    //     maxsize: 10000000, // 10MB
+    //     maxFiles: 10
+    //   }),
+    //   new winston.transports.File({
+    //     filename: 'logs/combined.log',
+    //     maxsize: 10000000, // 10MB
+    //     maxFiles: 10
+    //   }),
+    new winston.transports.Console({ format: winston.format.combine(winston.format.colorize({ all: true })) })
+  ]
+});
+
+export { logger };
