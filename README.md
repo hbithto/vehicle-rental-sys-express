@@ -4,8 +4,7 @@ This system provides vehicle inventory management, vehicle booking functionality
 
 ## Links
 
-- **GitHub Repository:** [Repo Link]
-- **Live Deployment:** [Deployment Link]
+- **Live Deployment:** [https://vrs-backend-zeta.vercel.app]
 
 ---
 
@@ -67,7 +66,7 @@ This system provides vehicle inventory management, vehicle booking functionality
 ## Usage Instructions
 
 ### Postman Import
-- visit this URL in the app: `/docs-v1/swagger.json`
+- visit this URL: `https://vrs-backend-zeta.vercel.app/docs-v1/swagger.json`
 - copy and paste the full link in the Postman and import the collection (this will import all the endpoints and their request/response examples)
 
 ---

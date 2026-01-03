@@ -15,6 +15,9 @@ app.use(httpLogger);                                                        // l
 app.use(cors());                                                 // cors policy
 app.use(express.json());                                                    // parse JSON body
 app.use(express.urlencoded({ extended: true }));                            // parse URL-encoded/form-data body
+app.get('/', (_, res: Response) => {
+    res.status(200).send('Welcome to Vehicle Rental System Backend API');
+});
 app.use('/api/v1', routes);
 app.use('/docs/v1', ...swaggerMiddleware);
 app.get("/docs-v1/swagger.json", (_, res: Response) => {
