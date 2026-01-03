@@ -4,7 +4,6 @@ import config from '~/config';
 import { logger } from '~/utils/logger';
 import { connectToDatabase, disconnectFromDatabase } from '~/db/db.connect';
 import { initDB } from '~/db/init';
-import { startBookingReturnCron } from '~/cron/booking.cron';
 
 let server: http.Server | null = null;
 
@@ -18,9 +17,6 @@ const startServer = async (): Promise<void> => {
     try {
         await connectToDatabase();
         await initDB();
-
-        // Start cron jobs
-        startBookingReturnCron();
 
         // Start only after successful db connection
         server = app.listen(config.port, () => {

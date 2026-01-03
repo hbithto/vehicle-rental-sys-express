@@ -9,6 +9,7 @@ const config = {
     logLevel: process.env.LOG_LEVEL ?? "info",
     db_conn_string: process.env.CONNECTION_STRING,
     jwtSecret: process.env.JWT_SECRET!,
+    cronSecret: process.env.CRON_SECRET!,
 };
 
 export default config;
