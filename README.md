@@ -66,48 +66,53 @@ This system provides vehicle inventory management, vehicle booking functionality
 ## Usage Instructions
 
 ### Postman Import
-- visit this URL: `https://vrs-backend-zeta.vercel.app/docs-v1/swagger.json`
-- copy and paste the full link in Postman and import the collection (this will import all the endpoints and their request/response examples)
+
+- Copy this URL: `https://vrs-backend-zeta.vercel.app/docs-v1/swagger.json`
+- Open Postman and go to the collection tab click on the "Import" button
+- Paste the link and import the collection (this will import all the endpoints and their request/response examples)
 
 ---
 
 ### API Endpoints
 
 ### Authentication
-| Method | Endpoint | Access |
-|--------|----------|--------|
-| POST | `/api/v1/auth/signup` | Public |
-| POST | `/api/v1/auth/signin` | Public |
+
+| Method | Endpoint              | Access |
+| ------ | --------------------- | ------ |
+| POST   | `/api/v1/auth/signup` | Public |
+| POST   | `/api/v1/auth/signin` | Public |
 
 ---
 
 ### Users
-| Method | Endpoint | Access |
-|--------|----------|--------|
-| GET | `/api/v1/users` | Admin only |
-| PUT | `/api/v1/users/:userId` | Admin or Customer |
-| DELETE | `/api/v1/users/:userId` | Admin only |
+
+| Method | Endpoint                | Access            |
+| ------ | ----------------------- | ----------------- |
+| GET    | `/api/v1/users`         | Admin only        |
+| PUT    | `/api/v1/users/:userId` | Admin or Customer |
+| DELETE | `/api/v1/users/:userId` | Admin only        |
 
 ---
 
 ### Vehicles
-| Method | Endpoint | Access |
-|--------|----------|--------|
-| POST | `/api/v1/vehicles` | Admin only |
-| GET | `/api/v1/vehicles` | Public |
-| GET | `/api/v1/vehicles/:vehicleId` | Public |
-| PUT | `/api/v1/vehicles/:vehicleId` | Admin only |
+
+| Method | Endpoint                      | Access     |
+| ------ | ----------------------------- | ---------- |
+| POST   | `/api/v1/vehicles`            | Admin only |
+| GET    | `/api/v1/vehicles`            | Public     |
+| GET    | `/api/v1/vehicles/:vehicleId` | Public     |
+| PUT    | `/api/v1/vehicles/:vehicleId` | Admin only |
 | DELETE | `/api/v1/vehicles/:vehicleId` | Admin only |
 
 ---
 
 ### Bookings
-| Method | Endpoint | Access |
-|--------|----------|--------|
-| POST | `/api/v1/bookings` | Customer or Admin |
-| GET | `/api/v1/bookings` | Role-based |
-| PUT | `/api/v1/bookings/:bookingId` | Role-based |
 
+| Method | Endpoint                      | Access            |
+| ------ | ----------------------------- | ----------------- |
+| POST   | `/api/v1/bookings`            | Customer or Admin |
+| GET    | `/api/v1/bookings`            | Role-based        |
+| PUT    | `/api/v1/bookings/:bookingId` | Role-based        |
 
 ### Authentication Flow
 
@@ -187,4 +192,3 @@ Content-Type: application/json
 ```
 
 ---
-
