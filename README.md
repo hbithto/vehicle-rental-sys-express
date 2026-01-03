@@ -68,7 +68,7 @@ This system provides vehicle inventory management, vehicle booking functionality
 ### Postman Import
 
 - Copy this URL: `https://vrs-backend-zeta.vercel.app/docs-v1/swagger.json`
-- Open Postman and go to the collection tab click on the "Import" button
+- Open Postman and go to the "Collections" tab, click on the "Import" button
 - Paste the link and import the collection (this will import all the endpoints and their request/response examples)
 
 ---
