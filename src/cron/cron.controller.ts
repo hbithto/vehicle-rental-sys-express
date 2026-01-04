@@ -6,8 +6,8 @@ import config from '~/config';
 
 const bookingReturnCronController = async (req: Request, res: Response) => {
     try {
-        const cronSecret = req.headers['Authorization'];
-        if (cronSecret !== `Bearer ${config.cronSecret}`) {
+        const cronSecret = req.headers.authorization;
+        if (!cronSecret || cronSecret !== `Bearer ${config.cronSecret}`) {
             return sendErrorResponse(res, {
                 statusCode: httpStatus.UNAUTHORIZED,
                 message: 'Unauthorized'
